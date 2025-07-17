@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 interface Project {
   id: string;
@@ -30,6 +30,15 @@ export const Projects: React.FC = () => {
     { id: "ai", name: t.projects.categories.ai, icon: "🤖" },
     { id: "design", name: t.projects.categories.design, icon: "🎨" },
   ];
+
+  useEffect(() => {
+    console.log("Projects component mounted");
+    console.log("Translations:", t);
+    console.log("Projects data:", t.projects.items);
+    console.log("Active filter:", activeFilter);
+    console.log("Filtered projects:", filteredProjects);
+  }, [t, activeFilter, filteredProjects]);
+
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       {" "}
