@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface NavigationProps {}
 
@@ -18,10 +19,9 @@ export const Navigation: React.FC<NavigationProps> = () => {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
+  const { t, toggleLanguage, language } = useLanguage();
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -39,22 +39,25 @@ export const Navigation: React.FC<NavigationProps> = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {[
-                { name: '首页', id: 'hero' },
-                { name: '关于', id: 'about' },
-                { name: '技能', id: 'skills' },
-                { name: '项目', id: 'projects' },
-                { name: '联系', id: 'contact' },
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 relative group"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
-                </button>
-              ))}
+              {Object.entries(t.navigation)
+                .filter(([key]) => key !== 'languageToggle')
+                .map(([key, name]) => (
+                  <button
+                    key={key}
+                    onClick={() => scrollToSection(key)}
+                    className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 relative group"
+                  >
+                    {name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                ))}
+              {/* Language Toggle */}
+              <button
+                onClick={toggleLanguage}
+                className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300"
+              >
+                {t.navigation.languageToggle}
+              </button>
             </div>
           </div>
           

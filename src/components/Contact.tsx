@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface FormData {
   name: string;
@@ -10,6 +11,7 @@ interface FormData {
 }
 
 export const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -41,30 +43,10 @@ export const Contact: React.FC = () => {
   };
 
   const contactMethods = [
-    {
-      icon: '📧',
-      title: '邮箱',
-      value: 'dingry@outlook.com',
-      link: 'mailto:dingry@outlook.com'
-    },
-    {
-      icon: '📱',
-      title: '微信',
-      value: 'Schumi',
-      link: '#'
-    },
-    {
-      icon: '💼',
-      title: 'LinkedIn',
-      value: '/in/ruiyi-ding',
-      link: 'https://linkedin.com'
-    },
-    {
-      icon: '🐙',
-      title: 'GitHub',
-      value: '@SchumiDing',
-      link: 'https://github.com/SchumiDing'
-    }
+    { icon: '📧', title: t.contact.methods.email, value: 'dingry@outlook.com', link: 'mailto:dingry@outlook.com' },
+    { icon: '📱', title: t.contact.methods.wechat, value: 'Schumi', link: '#' },
+    { icon: '💼', title: t.contact.methods.linkedIn, value: '/in/ruiyi-ding', link: 'https://linkedin.com' },
+    { icon: '🐙', title: t.contact.methods.github, value: '@SchumiDing', link: 'https://github.com/SchumiDing' },
   ];
 
   return (
@@ -73,23 +55,23 @@ export const Contact: React.FC = () => {
         {/* Section title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-mono bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
-            联系我
+            {t.contact.title}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            有项目想法或合作机会？我很乐意与您交流讨论
+            {t.contact.description}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact form */}
         <div className="bg-gradient-to-br from-pink-900/20 to-blue-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-white mb-6">发送消息</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">{t.contact.sendMessageTitle}</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-2">
-                    姓名 *
+                    {t.contact.nameLabel}
                   </label>
                   <input
                     type="text"
@@ -98,12 +80,12 @@ export const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                    placeholder="您的姓名"
+                    placeholder={t.contact.nameLabel}
                   />
                 </div>
                 <div>
                   <label className="block text-gray-300 text-sm font-medium mb-2">
-                    邮箱 *
+                    {t.contact.emailLabel}
                   </label>
                   <input
                     type="email"
@@ -112,14 +94,14 @@ export const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                    placeholder="your@email.com"
+                    placeholder={t.contact.emailLabel}
                   />
                 </div>
               </div>
 
               <div>
                 <label className="block text-gray-300 text-sm font-medium mb-2">
-                  主题 *
+                  {t.contact.subjectLabel}
                 </label>
                 <input
                   type="text"
@@ -128,13 +110,13 @@ export const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-                  placeholder="消息主题"
+                  placeholder={t.contact.subjectLabel}
                 />
               </div>
 
               <div>
                 <label className="block text-gray-300 text-sm font-medium mb-2">
-                  消息 *
+                  {t.contact.messageLabel}
                 </label>
                 <textarea
                   name="message"
@@ -143,7 +125,7 @@ export const Contact: React.FC = () => {
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors resize-none"
-                  placeholder="请详细描述您的需求或想法..."
+                  placeholder={t.contact.messageLabel}
                 />
               </div>
 
@@ -158,15 +140,16 @@ export const Contact: React.FC = () => {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    发送中...
+                    {t.contact.sendButton.sending}
                   </span>
                 ) : (
-                  '发送消息'
+                  t.contact.sendButton.default
                 )}
               </button>
 
               {submitStatus === 'success' && (
                 <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300 text-center">
+                  {/* TODO: add translation key for success message */}
                   消息发送成功！我会尽快回复您。
                 </div>
               )}
@@ -176,7 +159,7 @@ export const Contact: React.FC = () => {
           {/* Contact info */}
           <div className="space-y-8">
           <div className="bg-gradient-to-br from-pink-900/20 to-blue-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">联系方式</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">{t.contact.contactMethodsTitle}</h3>
               <div className="space-y-6">
                 {contactMethods.map((method, index) => (
                   <a
@@ -197,7 +180,7 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="bg-gradient-to-br from-pink-900/20 to-blue-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8">
-              <h3 className="text-xl font-bold text-white mb-4">让我们一起创造</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{t.contact.togetherTitle}</h3>
               <p className="text-gray-300 mb-6">
                 无论是创新的产品想法、技术挑战，还是科研邀请，
                 我都很乐意与您合作，将想法转化为现实。

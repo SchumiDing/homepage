@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import themes from "../../themes.json";
 import "./globals.css";
+import Providers from './providers';
 
 export const metadata: Metadata = {
   title: "丁瑞毅 - 全栈开发工程师",
@@ -20,7 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme={themes.default}>
       <body className="antialiased">
-        {children}
+        {/* Language and other providers */}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

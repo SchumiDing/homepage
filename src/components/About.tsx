@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('story');
@@ -44,16 +45,17 @@ export const About: React.FC = () => {
     }
   };
 
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-mono bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-            关于我
+            {t.about.title}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            了解我的背景、经验和对技术的热情
+            {t.about.description}
           </p>
         </div>
 

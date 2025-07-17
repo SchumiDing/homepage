@@ -1,18 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const Hero: React.FC = () => {
   const [text, setText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  const phrases = [
-    '全栈开发者',
-    '软件工程师', 
-    '技术创新者',
-    'AI探索者'
-  ];
+  const { t } = useLanguage();
+  const phrases = t.hero.phrases;
 
   useEffect(() => {
     const currentPhrase = phrases[currentIndex];
@@ -53,21 +50,20 @@ export const Hero: React.FC = () => {
             <h1 className="text-6xl md:text-8xl font-bold font-mono bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
               SCHUMI RUIYI DING
             </h1>
-            <div className="h-16 flex items-center justify-center">
-              <h2 className="text-2xl md:text-4xl font-mono text-gray-300">
-                我是一名{' '}
-                <span className="text-purple-400 font-bold">
-                  {text}
-                  <span className="animate-pulse">|</span>
-                </span>
-              </h2>
-            </div>
+          <div className="h-16 flex items-center justify-center">
+            <h2 className="text-2xl md:text-4xl font-mono text-gray-300">
+              {t.hero.label}{' '}
+              <span className="text-purple-400 font-bold">
+                {text}
+                <span className="animate-pulse">|</span>
+              </span>
+            </h2>
+          </div>
           </div>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            热衷于技术创新与产品开发，专注于构建高质量的软件解决方案。
-            在全栈开发、人工智能和云计算领域有着丰富的实践经验。
+            {t.hero.subtitle}
           </p>
 
           {/* CTA Buttons */}
