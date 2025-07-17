@@ -1,10 +1,10 @@
-# 🚀 丁瑞毅 - 个人主页
+# 🚀 丁睿毅 - 个人主页
 
 一个现代化的、科幻风格的个人主页网站，展示全栈开发技能和项目经验。使用 Next.js、TypeScript 和 Tailwind CSS 构建。
 
 ## 👨‍💻 关于我
 
-我是丁瑞毅（SchumiDing），一名热衷于技术创新的全栈开发工程师。专注于构建高质量的软件解决方案，在前端开发、后端架构和云计算领域有着丰富的实践经验。
+我是丁睿智毅（Schumi Ruiyi Ding），一名热衷于技术创新的全栈开发工程师。专注于构建高质量的软件解决方案，在前端开发、后端架构和云计算领域有着丰富的实践经验。
 
 ## ✨ 特性
 
@@ -34,21 +34,25 @@
 ## 🛠️ 技能领域
 
 ### 前端技术
+
 - React/Next.js、Vue.js
 - TypeScript、JavaScript
 - Tailwind CSS、响应式设计
 
 ### 后端技术
+
 - Node.js、Python、Java
 - PostgreSQL、MongoDB
 - RESTful API、微服务架构
 
 ### 云计算/DevOps
+
 - AWS、Docker、Kubernetes
 - CI/CD、自动化部署
 - 监控和日志管理
 
 ### 开发工具
+
 - Git/GitHub、VS Code
 - Linux、Figma
 - 敏捷开发流程
@@ -56,11 +60,13 @@
 ## 🎨 设计特色
 
 ### 色彩主题
+
 - 主色调：紫色 (#8b5cf6) 和粉色 (#ec4899)
 - 背景：深色渐变 (#0a0a0f → #1a0a2a → #2a0a4a)
 - 强调色：青色 (#06b6d4)
 
 ### 动画效果
+
 - 粒子背景动画
 - 打字机效果
 - 悬浮动画
@@ -68,6 +74,7 @@
 - 技能进度条动画
 
 ### 响应式设计
+
 - 移动端优化
 - 平板适配
 - 桌面端完整体验
@@ -75,11 +82,13 @@
 ## 🚀 快速开始
 
 ### 安装依赖
+
 \`\`\`bash
 npm install
 \`\`\`
 
 ### 启动开发服务器
+
 \`\`\`bash
 npm run dev
 \`\`\`
@@ -87,6 +96,7 @@ npm run dev
 访问 [http://localhost:3000](http://localhost:3000) 查看网站。
 
 ### 构建生产版本
+
 \`\`\`bash
 npm run build
 npm start
@@ -118,7 +128,9 @@ sci-fi-homepage/
 ## 🎯 自定义配置
 
 ### 修改个人信息
+
 在相应组件中更新以下内容：
+
 - `Hero.tsx` - 姓名、职业、介绍
 - `About.tsx` - 个人故事、经历
 - `Skills.tsx` - 技能和工具
@@ -126,6 +138,7 @@ sci-fi-homepage/
 - `Contact.tsx` - 联系方式
 
 ### 修改主题色彩
+
 在 `globals.css` 的 `:root` 中修改 CSS 变量：
 \`\`\`css
 :root {
