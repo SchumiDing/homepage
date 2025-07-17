@@ -72,7 +72,7 @@ export const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-mono bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold font-mono bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent mb-4">
             联系我
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -150,7 +150,7 @@ export const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-4 bg-gradient-to-r from-pink-600 to-blue-600 text-white font-semibold rounded-lg hover:from-pink-700 hover:to-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
@@ -187,7 +187,7 @@ export const Contact: React.FC = () => {
                     <div className="text-2xl">{method.icon}</div>
                     <div>
                       <div className="text-gray-400 text-sm">{method.title}</div>
-                      <div className="text-white font-medium group-hover:text-purple-400 transition-colors">
+                      <div className="text-white font-medium group-hover:text-blue-400 transition-colors">
                         {method.value}
                       </div>
                     </div>
@@ -196,25 +196,25 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8">
+            <div className="bg-gradient-to-br from-pink-900/20 to-blue-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8">
               <h3 className="text-xl font-bold text-white mb-4">让我们一起创造</h3>
               <p className="text-gray-300 mb-6">
-                无论是创新的产品想法、技术挑战，还是设计需求，
+                无论是创新的产品想法、技术挑战，还是科研邀请，
                 我都很乐意与您合作，将想法转化为现实。
               </p>
               
               <div className="space-y-3">
                 <div className="flex items-center text-gray-300">
-                  <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                  通常在24小时内回复
+                  <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                  24小时内回复
                 </div>
                 <div className="flex items-center text-gray-300">
                   <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                  免费项目咨询和评估
+                  项目沟通
                 </div>
                 <div className="flex items-center text-gray-300">
-                  <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                  长期合作关系
+                  <span className="w-2 h-2 bg-white border border-blue-400 rounded-full mr-3"></span>
+                  长期科研合作
                 </div>
               </div>
             </div>
