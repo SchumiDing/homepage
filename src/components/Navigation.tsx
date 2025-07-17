@@ -3,9 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-interface NavigationProps {}
-
-export const Navigation: React.FC<NavigationProps> = () => {
+export const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   
   useEffect(() => {
@@ -21,7 +19,7 @@ export const Navigation: React.FC<NavigationProps> = () => {
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
-  const { t, toggleLanguage, language } = useLanguage();
+  const { t, toggleLanguage } = useLanguage();
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
