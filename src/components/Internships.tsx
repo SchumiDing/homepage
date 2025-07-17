@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Internships: React.FC = () => {
@@ -17,7 +18,13 @@ export const Internships: React.FC = () => {
         <div className="space-y-10">
           {t.internships.experiences.map((exp, idx) => (
             <div key={idx} className="flex flex-col gap-4 md:flex-row md:items-center md:gap-x-6">
-              <img src={exp.icon} alt={exp.company} className="w-[280px] h-auto rounded-lg border border-white/20 object-contain" />
+                <Image
+                  src={exp.icon}
+                  alt={exp.company}
+                  width={280}
+                  height={auto}
+                  className="rounded-lg border border-white/20 object-contain"
+                />
               <div className="flex-1">
                 <div className="flex items-baseline space-x-4 mb-2">
                   <span className="text-gray-400 text-sm">{exp.period}</span>
