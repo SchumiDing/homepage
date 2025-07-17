@@ -31,6 +31,15 @@ export interface Translations {
   about: {
     title: string;
     description: string;
+    avatar: string;
+    name: string;
+    role: string;
+    stats: {
+      years: string;
+      yearsLabel: string;
+      projects: string;
+      projectsLabel: string;
+    };
     tabs: {
       story: string;
       journey: string;
@@ -132,8 +141,18 @@ export const translations: Record<Language, Translations> = {
       contactBtn: '联系我',
     },
     about: {
+
       title: '关于我',
       description: '了解我的背景、经验和对技术的热情',
+      avatar: '/homepage/img/credo.png',
+      name: '丁睿毅',
+      role: '算法+全栈开发',
+      stats: {
+        years: '7+',
+        yearsLabel: '年经验',
+        projects: '5+',
+        projectsLabel: '项目'
+      },
       tabs: { story: '我的故事', journey: '技术历程', philosophy: '设计理念' },
       content: {
         story: {
@@ -338,6 +357,15 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: 'About Me',
       description: 'Learn about my background, experience, and passion for technology.',
+      avatar: '/homepage/img/credo.png',
+      name: 'Ruiyi Ding',
+      role: 'Algorithm + Full Stack Developer',
+      stats: {
+        years: '7+',
+        yearsLabel: 'Years Experience',
+        projects: '5+',
+        projectsLabel: 'Projects'
+      },
       tabs: { story: 'My Story', journey: 'Tech Journey', philosophy: 'Design Philosophy' },
       content: {
         story: {

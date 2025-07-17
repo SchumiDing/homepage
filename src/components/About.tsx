@@ -37,21 +37,24 @@ export const About: React.FC = () => {
               
               {/* Profile container */}
               <div className="relative bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8 text-center">
-                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-4xl">
-                  👨‍💻
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">丁睿毅</h3>
-                <p className="text-purple-400">算法+全栈开发</p>
-                
-                {/* Stats */}
+                {/* 头像图片，圆角矩形风格，类似 Internships */}
+                <img
+                  src={t.about.avatar}
+                  alt={t.about.name}
+                  width={180}
+                  className="mx-auto mb-6 rounded-lg border border-white/20 object-contain"
+                />
+                <h3 className="text-xl font-semibold text-white mb-2">{t.about.name}</h3>
+                <p className="text-purple-400">{t.about.role}</p>
+                {/* Stats 使用 translation */}
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">7+</div>
-                    <div className="text-sm text-gray-400">年经验</div>
+                    <div className="text-2xl font-bold text-purple-400">{t.about.stats.years}</div>
+                    <div className="text-sm text-gray-400">{t.about.stats.yearsLabel}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-pink-400">5+</div>
-                    <div className="text-sm text-gray-400">项目</div>
+                    <div className="text-2xl font-bold text-pink-400">{t.about.stats.projects}</div>
+                    <div className="text-sm text-gray-400">{t.about.stats.projectsLabel}</div>
                   </div>
                 </div>
               </div>
