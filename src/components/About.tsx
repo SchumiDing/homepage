@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-export const About: React.FC<{}> = () => {
+export const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('story');
   const { t } = useLanguage();
   

@@ -13,7 +13,7 @@ interface SkillCategory {
   }>;
 }
 
-export const Skills: React.FC<{}> = () => {
+export const Skills: React.FC = () => {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
