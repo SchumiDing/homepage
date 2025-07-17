@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="group relative px-8 py-4 bg-gradient-to-r from-pink-600 to-blue-600 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
-              <span className="relative z-10">查看作品</span>
+              <span className="relative z-10">{t.hero.viewProjectsBtn}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
             
@@ -80,7 +80,7 @@ export const Hero: React.FC = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-lg hover:bg-blue-500/10 transition-all duration-300 hover:scale-105"
             >
-              联系我
+              {t.hero.contactBtn}
             </button>
           </div>
         </div>

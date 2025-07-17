@@ -3,49 +3,17 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-export const About: React.FC = () => {
+export const About: React.FC<{}> = () => {
   const [activeTab, setActiveTab] = useState('story');
-
+  const { t } = useLanguage();
+  
   const tabs = [
-    { id: 'story', label: '我的故事', icon: '📖' },
-    { id: 'journey', label: '技术历程', icon: '🚀' },
-    { id: 'philosophy', label: '设计理念', icon: '💡' },
+    { id: 'story', label: t.about.tabs.story, icon: '📖' },
+    { id: 'journey', label: t.about.tabs.journey, icon: '🚀' },
+    { id: 'philosophy', label: t.about.tabs.philosophy, icon: '💡' },
   ];
 
-  const content = {
-    story: {
-      title: '人工智能算法探索者',
-      text: '作为交叉专业的学生，我对人工智能算法有着浓厚兴趣。在校内自学多门AI课程，并辅修人工智能专业。在实习和科研中积累了丰富的实践经验，并成功发表CogSci 2025会议论文。',
-      highlights: [
-        '人工智能专业辅修',
-        '自主学习AI课程',
-        '实习与科研实践',
-        'CogSci 2025论文发表'
-      ]
-    },
-    journey: {
-      title: '视觉与强化学习研究',
-      text: '在科研中，我聚焦计算机视觉算法的感知偏差，设计并构建多种CNN和ViT架构。在强化学习领域，深入实践PPO与DQN，并探索MoE、Attention和MADDPG等前沿技术。',
-      highlights: [
-        'CNN与ViT架构设计',
-        '感知偏差研究',
-        'PPO / DQN 实践',
-        'MoE、Attention 与 MADDPG'
-      ]
-    },
-    philosophy: {
-      title: '跨学科融合与创新',
-      text: '我坚信跨学科的深度融合能催生创新。将严谨科研方法与实践经验应用于算法设计，不断追求卓越，推动技术在实际场景中的落地与变革。',
-      highlights: [
-        '科研驱动的算法创新',
-        '理论与实践结合',
-        '前沿技术持续学习',
-        '关注现实应用价值'
-      ]
-    }
-  };
-
-  const { t } = useLanguage();
+  const content = t.about.content;
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">

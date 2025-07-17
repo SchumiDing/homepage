@@ -25,6 +25,8 @@ export interface Translations {
     phrases: string[];
     label: string;
     subtitle: string;
+    viewProjectsBtn: string;
+    contactBtn: string;
   };
   about: {
     title: string;
@@ -43,6 +45,15 @@ export interface Translations {
   skills: {
     title: string;
     description: string;
+    categories: Array<{
+      name: string;
+      icon: string;
+      skills: Array<{
+        name: string;
+        level: number;
+        color: string;
+      }>;
+    }>;
     continuousLearning: {
       title: string;
       subtitle: string;
@@ -81,6 +92,10 @@ export interface Translations {
     emailLabel: string;
     subjectLabel: string;
     messageLabel: string;
+    cooperation: {
+      description: string;
+      promises: Array<{ icon: string; text: string }>;
+    };
     sendButton: {
       sending: string;
       default: string;
@@ -113,6 +128,8 @@ export const translations: Record<Language, Translations> = {
       label: '我是一名',
       subtitle:
         '热衷于技术创新与产品开发，专注于构建高质量的软件解决方案。在全栈开发、人工智能和云计算领域有着丰富的实践经验。',
+      viewProjectsBtn: '查看作品',
+      contactBtn: '联系我',
     },
     about: {
       title: '关于我',
@@ -139,6 +156,50 @@ export const translations: Record<Language, Translations> = {
     skills: {
       title: '技能专长',
       description: '掌握的技术栈和工具，持续学习新技术以保持竞争力',
+      categories: [
+        {
+          name: '开发技术',
+          icon: '💻',
+          skills: [
+            { name: 'C++/C', level: 88, color: 'from-blue-500 to-blue-700' },
+            { name: 'Python', level: 90, color: 'from-yellow-400 to-yellow-600' },
+            { name: 'Java', level: 85, color: 'from-red-400 to-red-600' },
+            { name: '算法设计', level: 85, color: 'from-green-400 to-green-600' },
+            { name: '并发编程', level: 80, color: 'from-purple-400 to-purple-600' },
+          ]
+        },
+        {
+          name: 'ML技能',
+          icon: '🤖',
+          skills: [
+            { name: 'PyTorch', level: 90, color: 'from-orange-400 to-orange-600' },
+            { name: 'TensorFlow', level: 85, color: 'from-blue-400 to-blue-600' },
+            { name: 'CUDA并行计算', level: 82, color: 'from-green-500 to-green-700' },
+            { name: '机器学习算法', level: 88, color: 'from-purple-500 to-purple-700' },
+            { name: '模型部署', level: 80, color: 'from-pink-400 to-pink-600' },
+          ]
+        },
+        {
+          name: '前端技术',
+          icon: '🎨',
+          skills: [
+            { name: 'Next.js', level: 85, color: 'from-blue-400 to-blue-600' },
+            { name: 'HTML/CSS', level: 88, color: 'from-cyan-400 to-cyan-600' },
+            { name: 'JavaScript', level: 85, color: 'from-yellow-500 to-yellow-700' },
+            { name: 'React', level: 82, color: 'from-blue-500 to-blue-700' },
+          ]
+        },
+        {
+          name: '开发工具',
+          icon: '🛠️',
+          skills: [
+            { name: 'Git版本控制', level: 90, color: 'from-gray-600 to-gray-800' },
+            { name: 'SSH终端', level: 88, color: 'from-green-500 to-green-700' },
+            { name: 'Linux环境', level: 85, color: 'from-yellow-500 to-yellow-700' },
+            { name: 'SQL数据库', level: 82, color: 'from-blue-600 to-blue-800' },
+          ]
+        }
+      ],
       continuousLearning: {
         title: '持续学习',
         subtitle:
@@ -233,6 +294,14 @@ export const translations: Record<Language, Translations> = {
       emailLabel: '邮箱 *',
       subjectLabel: '主题 *',
       messageLabel: '消息 *',
+      cooperation: {
+        description: '无论是创新的产品想法、技术挑战，还是科研邀请，\n我都很乐意与您合作，将想法转化为现实。',
+        promises: [
+          { icon: 'bg-pink-400', text: '24小时内回复' },
+          { icon: 'bg-blue-400', text: '项目沟通' },
+          { icon: 'bg-white border border-blue-400', text: '长期科研合作' }
+        ]
+      },
       sendButton: {
         sending: '发送中...',
         default: '发送消息',
@@ -263,6 +332,8 @@ export const translations: Record<Language, Translations> = {
       label: 'I am a',
       subtitle:
         'Passionate about technology innovation and product development, focusing on building high-quality software solutions. Rich experience in full-stack development, AI, and cloud computing.',
+      viewProjectsBtn: 'View Projects',
+      contactBtn: 'Contact Me',
     },
     about: {
       title: 'About Me',
@@ -289,6 +360,50 @@ export const translations: Record<Language, Translations> = {
     skills: {
       title: 'Skills & Expertise',
       description: 'Technologies and tools I master, continuously learning new skills to stay competitive.',
+      categories: [
+        {
+          name: 'Development',
+          icon: '💻',
+          skills: [
+            { name: 'C++/C', level: 88, color: 'from-blue-500 to-blue-700' },
+            { name: 'Python', level: 90, color: 'from-yellow-400 to-yellow-600' },
+            { name: 'Java', level: 85, color: 'from-red-400 to-red-600' },
+            { name: 'Algorithm Design', level: 85, color: 'from-green-400 to-green-600' },
+            { name: 'Concurrent Programming', level: 80, color: 'from-purple-400 to-purple-600' },
+          ]
+        },
+        {
+          name: 'ML Skills',
+          icon: '🤖',
+          skills: [
+            { name: 'PyTorch', level: 90, color: 'from-orange-400 to-orange-600' },
+            { name: 'TensorFlow', level: 85, color: 'from-blue-400 to-blue-600' },
+            { name: 'CUDA Parallel Computing', level: 82, color: 'from-green-500 to-green-700' },
+            { name: 'ML Algorithms', level: 88, color: 'from-purple-500 to-purple-700' },
+            { name: 'Model Deployment', level: 80, color: 'from-pink-400 to-pink-600' },
+          ]
+        },
+        {
+          name: 'Frontend',
+          icon: '🎨',
+          skills: [
+            { name: 'Next.js', level: 85, color: 'from-blue-400 to-blue-600' },
+            { name: 'HTML/CSS', level: 88, color: 'from-cyan-400 to-cyan-600' },
+            { name: 'JavaScript', level: 85, color: 'from-yellow-500 to-yellow-700' },
+            { name: 'React', level: 82, color: 'from-blue-500 to-blue-700' },
+          ]
+        },
+        {
+          name: 'Dev Tools',
+          icon: '🛠️',
+          skills: [
+            { name: 'Git Version Control', level: 90, color: 'from-gray-600 to-gray-800' },
+            { name: 'SSH Terminal', level: 88, color: 'from-green-500 to-green-700' },
+            { name: 'Linux Environment', level: 85, color: 'from-yellow-500 to-yellow-700' },
+            { name: 'SQL Databases', level: 82, color: 'from-blue-600 to-blue-800' },
+          ]
+        }
+      ],
       continuousLearning: {
         title: 'Continuous Learning',
         subtitle:
@@ -377,12 +492,20 @@ export const translations: Record<Language, Translations> = {
     },
     contact: {
       title: 'Contact Me',
-      description: 'Got project ideas or collaboration opportunities? I’d love to discuss them.',
+      description: "Got project ideas or collaboration opportunities? I’d love to discuss them.",
       sendMessageTitle: 'Send Message',
       nameLabel: 'Name *',
       emailLabel: 'Email *',
       subjectLabel: 'Subject *',
       messageLabel: 'Message *',
+      cooperation: {
+        description: 'Whether it’s an innovative product idea, technical challenge, or research invitation,\nI’m happy to collaborate and turn ideas into reality.',
+        promises: [
+          { icon: 'bg-pink-400', text: 'Reply within 24 hours' },
+          { icon: 'bg-blue-400', text: 'Project communication' },
+          { icon: 'bg-white border border-blue-400', text: 'Long-term research collaboration' }
+        ]
+      },
       sendButton: { sending: 'Sending...', default: 'Send Message' },
       contactMethodsTitle: 'Contact Methods',
       togetherTitle: "Let's Create Together",

@@ -181,24 +181,16 @@ export const Contact: React.FC = () => {
 
             <div className="bg-gradient-to-br from-pink-900/20 to-blue-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8">
               <h3 className="text-xl font-bold text-white mb-4">{t.contact.togetherTitle}</h3>
-              <p className="text-gray-300 mb-6">
-                无论是创新的产品想法、技术挑战，还是科研邀请，
-                我都很乐意与您合作，将想法转化为现实。
+              <p className="text-gray-300 mb-6 whitespace-pre-line">
+                {t.contact.cooperation.description}
               </p>
-              
               <div className="space-y-3">
-                <div className="flex items-center text-gray-300">
-                  <span className="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
-                  24小时内回复
-                </div>
-                <div className="flex items-center text-gray-300">
-                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                  项目沟通
-                </div>
-                <div className="flex items-center text-gray-300">
-                  <span className="w-2 h-2 bg-white border border-blue-400 rounded-full mr-3"></span>
-                  长期科研合作
-                </div>
+                {t.contact.cooperation.promises.map((promise, idx) => (
+                  <div key={idx} className="flex items-center text-gray-300">
+                    <span className={`w-2 h-2 ${promise.icon} rounded-full mr-3`}></span>
+                    {promise.text}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

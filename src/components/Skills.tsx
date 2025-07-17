@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface SkillCategory {
   name: string;
@@ -12,54 +13,12 @@ interface SkillCategory {
   }>;
 }
 
-export const Skills: React.FC = () => {
+export const Skills: React.FC<{}> = () => {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
-  const skillCategories: SkillCategory[] = [
-    {
-      name: '开发技术',
-      icon: '💻',
-      skills: [
-        { name: 'C++/C', level: 88, color: 'from-blue-500 to-blue-700' },
-        { name: 'Python', level: 90, color: 'from-yellow-400 to-yellow-600' },
-        { name: 'Java', level: 85, color: 'from-red-400 to-red-600' },
-        { name: '算法设计', level: 85, color: 'from-green-400 to-green-600' },
-        { name: '并发编程', level: 80, color: 'from-purple-400 to-purple-600' },
-      ]
-    },
-    {
-      name: 'ML技能',
-      icon: '🤖',
-      skills: [
-        { name: 'PyTorch', level: 90, color: 'from-orange-400 to-orange-600' },
-        { name: 'TensorFlow', level: 85, color: 'from-blue-400 to-blue-600' },
-        { name: 'CUDA并行计算', level: 82, color: 'from-green-500 to-green-700' },
-        { name: '机器学习算法', level: 88, color: 'from-purple-500 to-purple-700' },
-        { name: '模型部署', level: 80, color: 'from-pink-400 to-pink-600' },
-      ]
-    },
-    {
-      name: '前端技术',
-      icon: '🎨',
-      skills: [
-        { name: 'Next.js', level: 85, color: 'from-blue-400 to-blue-600' },
-        { name: 'HTML/CSS', level: 88, color: 'from-cyan-400 to-cyan-600' },
-        { name: 'JavaScript', level: 85, color: 'from-yellow-500 to-yellow-700' },
-        { name: 'React', level: 82, color: 'from-blue-500 to-blue-700' },
-      ]
-    },
-    {
-      name: '开发工具',
-      icon: '🛠️',
-      skills: [
-        { name: 'Git版本控制', level: 90, color: 'from-gray-600 to-gray-800' },
-        { name: 'SSH终端', level: 88, color: 'from-green-500 to-green-700' },
-        { name: 'Linux环境', level: 85, color: 'from-yellow-500 to-yellow-700' },
-        { name: 'SQL数据库', level: 82, color: 'from-blue-600 to-blue-800' },
-      ]
-    }
-  ];
+  const skillCategories = t.skills.categories;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,10 +43,10 @@ export const Skills: React.FC = () => {
         {/* Section title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-mono bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-            技能专长
+            {t.skills.title}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            掌握的技术栈和工具，持续学习新技术以保持竞争力
+            {t.skills.description}
           </p>
         </div>
 
@@ -137,13 +96,12 @@ export const Skills: React.FC = () => {
         {/* Additional info */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">持续学习</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">{t.skills.continuousLearning.title}</h3>
             <p className="text-gray-300 mb-6">
-              技术日新月异，我始终保持学习的热情，关注最新的技术趋势和最佳实践。
-              目前正在深入学习深度强化学习、连分式神经网络架构和高性能计算技术。
+              {t.skills.continuousLearning.subtitle}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {['深度强化学习', '神经网络架构', '高性能计算', 'CUDA优化', '论文写作', '学术研究'].map((tech) => (
+              {t.skills.continuousLearning.tags.map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-sm text-gray-300 hover:bg-white/20 transition-colors duration-300"
