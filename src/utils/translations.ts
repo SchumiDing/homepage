@@ -51,6 +51,13 @@ export interface Translations {
   };
   internships: {
     title: string;
+    experiences: Array<{
+      period: string;
+      company: string;
+      position: string;
+      icon: string;
+      details: string[];
+    }>;
   };
   projects: {
     title: string;
@@ -148,6 +155,55 @@ export const translations: Record<Language, Translations> = {
     },
     internships: {
       title: '实习经历',
+      experiences: [
+        {
+          period: '2023.7 - 2024.1',
+          company: '中国科学院软件科学研究所',
+          position: '自然语言处理实习生',
+          icon: '/homepage/img/iscas.png',
+          details: [
+            '基于ChatGLM大语言模型，客制化实现电话营销的人工智能语言模型、部署模型并开发接口。',
+            '分析已有电话营销对话数据，设计电话营销的自然语言处理算法。',
+            '协助科研工作中的大语言模型使用。',
+            '基于Python-HTML-CSS-Javascript开发网站用于大语言模型测试。'
+          ]
+        },
+        {
+          period: '2024.6 - 2024.8',
+          company: '诺华中国 DDIT 部门',
+          position: '数据开发（实习）',
+          icon: '/homepage/img/novartis.png',
+          details: [
+            '基于Python，撰写特殊文件解析算法，将旧数据库数据转移到新的AWS数据库中。',
+            '阅读基于QVLink语言的数据库处理代码，绘制架构图并整理重构思路。',
+            '使用Jenkins流程化平台测试数据处理项目，阅读报错并汇报错误内容。'
+          ]
+        },
+        {
+          period: '2024.12 - 2025.3',
+          company: '德勤管理咨询',
+          position: 'AI 算法实习生',
+          icon: '/homepage/img/deloitte.png',
+          details: [
+            '测试并分析多模态算法与开源大语言模型结合下的多Agent查询系统优劣。',
+            '开发大语言模型text2sql自动化测试脚本，分析测试数据。',
+            '基于提示词和原有text2sql设计，优化大语言模型text2sql架构。',
+            '应用前沿多模态处理算法，协助前端高效处理多模态文件。'
+          ]
+        },
+        {
+          period: '2025.6 - 2025.9',
+          company: '默升科技',
+          position: 'AI 本地化部署工程师（实习）',
+          icon: '/homepage/img/credo.png',
+          details: [
+            '设计RAG-LLM系统，提升Credo各部门业务效率。',
+            '本地化部署Deepseek-r1模型，并构建多模型RAG系统提升搜索性能。',
+            '设计并开发基于图的并行RAG系统，用于信息搜索。',
+            '设计在线（价值网络训练）及离线（PPO强化学习）算法，收集用户反馈优化模型。'
+          ]
+        }
+      ]
     },
     projects: {
       title: '精选项目',
@@ -249,6 +305,55 @@ export const translations: Record<Language, Translations> = {
     },
     internships: {
       title: 'Internship Experience',
+      experiences: [
+        {
+          period: '2023.7 - 2024.1',
+          company: 'Institute of Software, Chinese Academy of Sciences',
+          position: 'NLP Research Intern',
+          icon: '/homepage/img/iscas.png',
+          details: [
+            'Customized and implemented AI language model for telemarketing based on ChatGLM, deployed models and developed APIs.',
+            'Analyzed existing telemarketing dialogue data and designed NLP algorithms.',
+            'Assisted in research work involving large language models.',
+            'Developed website using Python-HTML-CSS-Javascript for LLM testing.'
+          ]
+        },
+        {
+          period: '2024.6 - 2024.8',
+          company: 'Novartis China DDIT',
+          position: 'Data Development Intern',
+          icon: '/homepage/img/novartis.png',
+          details: [
+            'Developed custom file parsing algorithms in Python for migrating legacy database data to new AWS database.',
+            'Analyzed QVLink-based database processing code, created architecture diagrams and proposed refactoring strategies.',
+            'Tested data processing projects using Jenkins platform, analyzed and reported errors.'
+          ]
+        },
+        {
+          period: '2024.12 - 2025.3',
+          company: 'Deloitte Consulting',
+          position: 'AI Algorithm Intern',
+          icon: '/homepage/img/deloitte.png',
+          details: [
+            'Tested and analyzed multi-agent query systems combining multimodal algorithms with open-source LLMs.',
+            'Developed automated testing scripts for LLM text2sql and analyzed test data.',
+            'Optimized LLM text2sql architecture based on prompts and existing designs.',
+            'Applied cutting-edge multimodal processing algorithms to assist frontend with efficient file handling.'
+          ]
+        },
+        {
+          period: '2025.6 - 2025.9',
+          company: 'Credo Technology',
+          position: 'AI Localization Engineer Intern',
+          icon: '/homepage/img/credo.png',
+          details: [
+            'Designed RAG-LLM system to improve efficiency across Credo departments.',
+            'Locally deployed Deepseek-r1 model and built multi-model RAG system to enhance search performance.',
+            'Designed and developed graph-based parallel RAG system for information retrieval.',
+            'Designed online (value network training) and offline (PPO reinforcement learning) algorithms to optimize models based on user feedback.'
+          ]
+        }
+      ]
     },
     projects: {
       title: 'Featured Projects',
