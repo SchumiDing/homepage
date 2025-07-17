@@ -48,12 +48,10 @@ export const Projects: React.FC = () => {
         <div className="text-center mb-16">
           {" "}
           <h2 className="text-4xl md:text-5xl font-bold font-mono bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-            {" "}
-            精选项目{" "}
-          </h2>{" "}
+            {t.projects.title}
+          </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            {" "}
-            展示我的技术能力和创新思维的代表性作品{" "}
+            {t.projects.description}
           </p>{" "}
         </div>{" "}
         {/* Filter buttons */}{" "}
