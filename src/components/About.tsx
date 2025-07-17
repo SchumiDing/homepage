@@ -71,16 +71,16 @@ export const About: React.FC = () => {
                   👨‍💻
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">丁睿毅</h3>
-                <p className="text-purple-400">全栈开发工程师</p>
+                <p className="text-purple-400">算法+全栈开发</p>
                 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">3+</div>
+                    <div className="text-2xl font-bold text-purple-400">7+</div>
                     <div className="text-sm text-gray-400">年经验</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-pink-400">20+</div>
+                    <div className="text-2xl font-bold text-pink-400">5+</div>
                     <div className="text-sm text-gray-400">项目</div>
                   </div>
                 </div>

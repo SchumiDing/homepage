@@ -82,7 +82,7 @@ export const Contact: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact form */}
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8">
+        <div className="bg-gradient-to-br from-pink-900/20 to-blue-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8">
             <h3 className="text-2xl font-bold text-white mb-6">发送消息</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -150,7 +150,7 @@ export const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-4 bg-gradient-to-r from-pink-600 to-blue-600 text-white font-semibold rounded-lg hover:from-pink-700 hover:to-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-4 bg-gradient-to-r from-pink-400 to-blue-400 text-black font-semibold rounded-lg hover:from-pink-500 hover:to-blue-500 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
@@ -175,7 +175,7 @@ export const Contact: React.FC = () => {
 
           {/* Contact info */}
           <div className="space-y-8">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8">
+          <div className="bg-gradient-to-br from-pink-900/20 to-blue-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8">
               <h3 className="text-2xl font-bold text-white mb-6">联系方式</h3>
               <div className="space-y-6">
                 {contactMethods.map((method, index) => (

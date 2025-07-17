@@ -42,7 +42,7 @@ export const Internships: React.FC = () => {
     {
       period: '2025.6 - 2025.9',
       company: '默升科技',
-      position: 'AI 算法实习生',
+      position: 'AI 本地化部署工程师（实习）',
       icon: '/img/credo.png',
       details: [
         '设计RAG-LLM系统，提升Credo各部门业务效率。',

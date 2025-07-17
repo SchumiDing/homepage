@@ -1,20 +1,23 @@
 {
   "themes": {
-    "pink-blue-white": {
-      "primary": "#ec4899",
-      "secondary": "#3b82f6",
-      "accent": "#ffffff"
+    "light-cool-white": {
+      "primary": "#e0f2fe",
+      "secondary": "#bae6fd",
+      "accent": "#000000",
+      "text": "#000000"
     },
     "purple-pink": {
       "primary": "#8b5cf6",
       "secondary": "#ec4899",
-      "accent": "#f3f4f6"
+    "accent": "#f3f4f6",
+    "text": "#D1D5DB"
     },
     "blue-green-white": {
       "primary": "#3b82f6",
       "secondary": "#22c55e",
-      "accent": "#ffffff"
+    "accent": "#ffffff",
+    "text": "#D1D5DB"
     }
   },
-  "default": "pink-blue-white"
+  "default": "light-cool-white"
 }
