@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 interface Project {
   id: string;
   title: string;
@@ -14,142 +15,21 @@ interface Project {
 export const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const projects: Project[] = [
-    {
-      id: "1",
-      title: "基于深度强化学习的网络调度算法",
-      description:
-        "设计新型深度强化学习方法解决网络双边匹配问题，优化注意力机制适应约束网络优化需求。项目已发表SCI-1期刊论文，CCF-A会议论文在投。",
-      image: "🧠",
-      technologies: [
-        "Python",
-        "PyTorch",
-        "Deep RL",
-        "CUDA",
-        "Network Optimization",
-      ],
-      features: [
-        "深度强化学习算法设计",
-        "注意力机制优化",
-        "分布式推理算法",
-        "网络双边匹配",
-        "约束优化求解",
-      ],
-      githubUrl: "https://github.com/SchumiDing",
-      category: "ai",
-    },
-    {
-      id: "2",
-      title: "连分网络架构探索",
-      description:
-        "基于连分式理论开发新型神经网络结构，构建高效CUDA和CPU算子，通过减少数据传输时间提升网络推理和更新效率。",
-      image: "🔬",
-      technologies: [
-        "CUDA",
-        "C++",
-        "Python",
-        "Neural Architecture",
-        "Mathematical Theory",
-      ],
-      features: [
-        "CUDA/CPU算子优化",
-        "连分式理论应用",
-        "推理效率提升",
-        "神经网络框架开发",
-        "性能分析验证",
-      ],
-      githubUrl: "https://github.com/SchumiDing",
-      category: "ai",
-    },
-    {
-      id: "3",
-      title: "视觉算法在统计问题上的判断偏差研究",
-      description:
-        "研究卷积神经网络在预测散点图相关系数时的偏差，构建CNN预测人类决策行为的方法论框架。论文已发表于CogSci 2025(CCF-B)。",
-      image: "📊",
-      technologies: [
-        "Python",
-        "TensorFlow",
-        "VGG-19",
-        "Statistical Analysis",
-        "Computer Vision",
-      ],
-      features: [
-        "CNN判断偏差分析",
-        "人类行为预测建模",
-        "散点图相关性预测",
-        "认知科学研究",
-        "方法论框架构建",
-      ],
-      githubUrl: "https://github.com/SchumiDing",
-      category: "ai",
-    },
-    {
-      id: "4",
-      title: "拾光驿站老年服务创业项目",
-      description:
-        "专注老年人故事收集与传播的创业项目，已成立上海拾光驿站老年服务有限公司，2024年全年利润率超50%，获得多个创业奖项。",
-      image: "🎬",
-      technologies: [
-        "视频制作",
-        "内容运营",
-        "看板管理",
-        "商业模式设计",
-        "市场营销",
-      ],
-      features: [
-        "老人故事视频采集",
-        "内容制作与优化",
-        "看板管理系统",
-        "商业模式创新",
-        "20+老人采访完成",
-      ],
-      liveUrl: "https://example.com",
-      category: "design",
-    },
-    {
-      id: "5",
-      title: "Credo AI Chat v0.1.0 – RAG-Powered Q&A with OCR & Database Control",
-      description:
-        "Credo AI Chat 是一个本地优先的 RAG 系统，结合对话式 AI 引擎、文档摄取、OCR 识别与动态数据库管理，支持多模式问答与实时同步。",
-      image: "🧠",
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Python",
-        "Flask",
-        "Ollama",
-        "LangChain",
-        "Mineru",
-        "OpenCV",
-      ],
-      features: [
-        "双模式聊天：RAG 增强与纯 LLM 完成",
-        "完整聊天历史保留循环",
-        "Markdown 渲染与代码高亮",
-        "双向向量数据库：网站与 PDF",
-        "OCR 与 Markdown 自动转换",
-        "前端动态数据库控制与同步",
-        "可编辑系统提示与反馈日志",
-        "流式响应与文件预览支持",
-        "Flask + Waitress 异步后端",
-      ],
-      githubUrl: "https://github.com/SchumiDing/Credo-AI",
-      category: "ai",
-    },
-  ];
-  const categories = [
-    { id: "all", name: "全部", icon: "🌟" },
-    { id: "web", name: "Web应用", icon: "🌐" },
-    { id: "mobile", name: "移动应用", icon: "📱" },
-    { id: "ai", name: "AI项目", icon: "🤖" },
-    { id: "design", name: "设计作品", icon: "🎨" },
-  ];
+  const { t } = useLanguage();
+  const allProjects: Project[] = t.projects.items;
+
   const filteredProjects =
     activeFilter === "all"
-      ? projects
-      : projects.filter((project) => project.category === activeFilter);
+      ? allProjects
+      : allProjects.filter((project) => project.category === activeFilter);
+
+  const categories = [
+    { id: "all", name: t.projects.categories.all, icon: "🌟" },
+    { id: "web", name: t.projects.categories.web, icon: "🌐" },
+    { id: "mobile", name: t.projects.categories.mobile, icon: "📱" },
+    { id: "ai", name: t.projects.categories.ai, icon: "🤖" },
+    { id: "design", name: t.projects.categories.design, icon: "🎨" },
+  ];
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       {" "}

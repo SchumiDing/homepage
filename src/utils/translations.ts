@@ -1,5 +1,16 @@
 export type Language = 'en' | 'zh';
 
+export interface ProjectItem {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  features: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  category: 'web' | 'mobile' | 'ai' | 'design';
+}
 export interface Translations {
   navigation: {
     home: string;
@@ -53,6 +64,7 @@ export interface Translations {
     };
     buttons: { preview: string; code: string };
     modal: { techTitle: string; featuresTitle: string; close: string };
+    items: ProjectItem[];
   };
   contact: {
     title: string;
@@ -149,6 +161,13 @@ export const translations: Record<Language, Translations> = {
       },
       buttons: { preview: '预览', code: '代码' },
       modal: { techTitle: '技术栈', featuresTitle: '主要功能', close: '✕' },
+      items: [
+        { id: '1', title: '基于深度强化学习的网络调度算法', description: '设计新型深度强化学习方法解决网络双边匹配问题，优化注意力机制适应约束网络优化需求。项目已发表SCI-1期刊论文，CCF-A会议论文在投。', image: '🧠', technologies: ['Python', 'PyTorch', 'Deep RL', 'CUDA', 'Network Optimization'], features: ['深度强化学习算法设计', '注意力机制优化', '分布式推理算法', '网络双边匹配', '约束优化求解'], githubUrl: 'https://github.com/SchumiDing', category: 'ai' },
+        { id: '2', title: '连分网络架构探索', description: '基于连分式理论开发新型神经网络结构，构建高效CUDA和CPU算子，通过减少数据传输时间提升网络推理和更新效率。', image: '🔬', technologies: ['CUDA', 'C++', 'Python', 'Neural Architecture', 'Mathematical Theory'], features: ['CUDA/CPU算子优化', '连分式理论应用', '推理效率提升', '神经网络框架开发', '性能分析验证'], githubUrl: 'https://github.com/SchumiDing', category: 'ai' },
+        { id: '3', title: '视觉算法在统计问题上的判断偏差研究', description: '研究卷积神经网络在预测散点图相关系数时的偏差，构建CNN预测人类决策行为的方法论框架。论文已发表于CogSci 2025(CCF-B)。', image: '📊', technologies: ['Python', 'TensorFlow', 'VGG-19', 'Statistical Analysis', 'Computer Vision'], features: ['CNN判断偏差分析', '人类行为预测建模', '散点图相关性预测', '认知科学研究', '方法论框架构建'], githubUrl: 'https://github.com/SchumiDing', category: 'ai' },
+        { id: '4', title: '拾光驿站老年服务创业项目', description: '专注老年人故事收集与传播的创业项目，已成立上海拾光驿站老年服务有限公司，2024年全年利润率超50%，获得多个创业奖项。', image: '🎬', technologies: ['视频制作', '内容运营', '看板管理', '商业模式设计', '市场营销'], features: ['老人故事视频采集', '内容制作与优化', '看板管理系统', '商业模式创新', '20+老人采访完成'], liveUrl: 'https://example.com', category: 'design' },
+        { id: '5', title: 'Credo AI Chat v0.1.0 – RAG-Powered Q&A with OCR & Database Control', description: 'Credo AI Chat 是一个本地优先的 RAG 系统，结合对话式 AI 引擎、文档摄取、OCR 识别与动态数据库管理，支持多模式问答与实时同步。', image: '🧠', technologies: ['Next.js', 'React', 'TypeScript', 'Python', 'Flask', 'Ollama', 'LangChain', 'Mineru', 'OpenCV'], features: ['双模式聊天：RAG 增强与纯 LLM 完成', '完整聊天历史保留循环', 'Markdown 渲染与代码高亮', '双向向量数据库：网站与 PDF', 'OCR 与 Markdown 自动转换', '前端动态数据库控制与同步', '可编辑系统提示与反馈日志', '流式响应与文件预览支持', 'Flask + Waitress 异步后端'], githubUrl: 'https://github.com/SchumiDing/Credo-AI', category: 'ai' }
+      ],
     },
     contact: {
       title: '联系我',
@@ -243,6 +262,13 @@ export const translations: Record<Language, Translations> = {
       },
       buttons: { preview: 'Preview', code: 'Code' },
       modal: { techTitle: 'Technologies', featuresTitle: 'Key Features', close: 'Close' },
+      items: [
+        { id: '1', title: 'Network Scheduling Algorithm based on Deep Reinforcement Learning', description: 'Designed a novel deep reinforcement learning method to solve the network bilateral matching problem, optimizing attention mechanisms to meet constrained network optimization requirements. The project has been published in an SCI Q1 journal, and a CCF-A conference paper is under submission.', image: '🧠', technologies: ['Python', 'PyTorch', 'Deep RL', 'CUDA', 'Network Optimization'], features: ['Deep RL algorithm design', 'Attention mechanism optimization', 'Distributed inference algorithm', 'Network bilateral matching', 'Constrained optimization solving'], githubUrl: 'https://github.com/SchumiDing', category: 'ai' },
+        { id: '2', title: 'Continued Fraction Network Architecture Exploration', description: 'Developed a novel neural network structure based on continued fraction theory, building efficient CUDA and CPU operators to improve network inference and update efficiency by reducing data transfer time.', image: '🔬', technologies: ['CUDA', 'C++', 'Python', 'Neural Architecture', 'Mathematical Theory'], features: ['CUDA/CPU operator optimization', 'Continued fraction theory application', 'Inference efficiency improvement', 'Neural network framework development', 'Performance analysis and validation'], githubUrl: 'https://github.com/SchumiDing', category: 'ai' },
+        { id: '3', title: 'Study of Judgment Bias in Vision Algorithms on Statistical Problems', description: 'Investigated biases of convolutional neural networks when predicting correlation coefficients of scatter plots, building a methodological framework for CNN-based human decision behavior prediction. Paper published in CogSci 2025 (CCF-B).', image: '📊', technologies: ['Python', 'TensorFlow', 'VGG-19', 'Statistical Analysis', 'Computer Vision'], features: ['CNN bias analysis', 'Human behavior prediction modeling', 'Scatter plot correlation prediction', 'Cognitive science research', 'Methodology framework construction'], githubUrl: 'https://github.com/SchumiDing', category: 'ai' },
+        { id: '4', title: 'Shiguang Station Elderly Service Startup Project', description: 'An entrepreneurial project focusing on collecting and sharing elderly stories, established Shanghai Shiguang Station Elderly Service Co., Ltd., with an annual profit margin of over 50% in 2024, and received multiple entrepreneurship awards.', image: '🎬', technologies: ['Video Production', 'Content Operation', 'Kanban Management', 'Business Model Design', 'Marketing'], features: ['Elder story video collection', 'Content creation and optimization', 'Kanban management system', 'Business model innovation', '20+ elderly interviews completed'], liveUrl: 'https://example.com', category: 'design' },
+        { id: '5', title: 'Credo AI Chat v0.1.0 – RAG-Powered Q&A with OCR & Database Control', description: 'Credo AI Chat is a locally-first RAG system combining a conversational AI engine, document ingestion, OCR recognition, and dynamic database management, supporting multi-modal Q&A and real-time synchronization.', image: '🧠', technologies: ['Next.js', 'React', 'TypeScript', 'Python', 'Flask', 'Ollama', 'LangChain', 'Mineru', 'OpenCV'], features: ['Dual-mode chat: RAG-enhanced and pure LLM completion', 'Complete chat history loop retention', 'Markdown rendering and code highlighting', 'Bidirectional vector database: website and PDF', 'OCR and Markdown auto-conversion', 'Frontend dynamic database control and synchronization', 'Editable system prompts and feedback logs', 'Streaming responses and file preview support', 'Asynchronous backend with Flask + Waitress'], githubUrl: 'https://github.com/SchumiDing/Credo-AI', category: 'ai' }
+      ],
     },
     contact: {
       title: 'Contact Me',
