@@ -8,7 +8,7 @@ export const Internships: React.FC = () => {
       period: '2023.7 - 2024.1',
       company: '中国科学院软件科学研究所',
       position: '自然语言处理实习生',
-      icon: '/img/iscas.png',
+      icon: '/homepage/img/iscas.png',
       details: [
         '基于ChatGLM大语言模型，客制化实现电话营销的人工智能语言模型、部署模型并开发接口。',
         '分析已有电话营销对话数据，设计电话营销的自然语言处理算法。',
@@ -20,7 +20,7 @@ export const Internships: React.FC = () => {
       period: '2024.6 - 2024.8',
       company: '诺华中国 DDIT 部门',
       position: '数据开发（实习）',
-      icon: '/img/novartis.png',
+      icon: '/homepage/img/novartis.png',
       details: [
         '基于Python，撰写特殊文件解析算法，将旧数据库数据转移到新的AWS数据库中。',
         '阅读基于QVLink语言的数据库处理代码，绘制架构图并整理重构思路。',
@@ -31,7 +31,7 @@ export const Internships: React.FC = () => {
       period: '2024.12 - 2025.3',
       company: '德勤管理咨询',
       position: 'AI 算法实习生',
-      icon: '/img/deloitte.png',
+      icon: '/homepage/img/deloitte.png',
       details: [
         '测试并分析多模态算法与开源大语言模型结合下的多Agent查询系统优劣。',
         '开发大语言模型text2sql自动化测试脚本，分析测试数据。',
@@ -43,7 +43,7 @@ export const Internships: React.FC = () => {
       period: '2025.6 - 2025.9',
       company: '默升科技',
       position: 'AI 本地化部署工程师（实习）',
-      icon: '/img/credo.png',
+      icon: '/homepage/img/credo.png',
       details: [
         '设计RAG-LLM系统，提升Credo各部门业务效率。',
         '本地化部署Deepseek-r1模型，并构建多模型RAG系统提升搜索性能。',
