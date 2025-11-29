@@ -3,16 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-interface SkillCategory {
-  name: string;
-  icon: string;
-  skills: Array<{
-    name: string;
-    level: number;
-    color: string;
-  }>;
-}
-
 export const Skills: React.FC = () => {
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);

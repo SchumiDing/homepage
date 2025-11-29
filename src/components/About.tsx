@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 
 export const About: React.FC = () => {
@@ -38,11 +39,13 @@ export const About: React.FC = () => {
               {/* Profile container */}
               <div className="relative bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm border border-white/10 rounded-lg p-8 text-center">
                 {/* 头像图片，圆角矩形风格，类似 Internships */}
-                <img
+                <Image
                   src={t.about.avatar}
                   alt={t.about.name}
                   width={180}
+                  height={180}
                   className="mx-auto mb-6 rounded-lg border border-white/20 object-contain"
+                  unoptimized
                 />
                 <h3 className="text-xl font-semibold text-white mb-2">{t.about.name}</h3>
                 <p className="text-purple-400">{t.about.role}</p>
