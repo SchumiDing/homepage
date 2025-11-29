@@ -145,7 +145,7 @@ export const translations: Record<Language, Translations> = {
 
       title: '关于我',
       description: '了解我的背景、经验和对技术的热情',
-      avatar: '/homepage/img/credo.png',
+      avatar: '/homepage/img/shlab.png',
       name: '丁睿毅',
       role: '算法+全栈开发',
       affiliation: '上海人工智能实验室',
@@ -239,15 +239,15 @@ export const translations: Record<Language, Translations> = {
       title: '实习经历',
       experiences: [
         {
-          period: '2025.10 - 至今',
+          period: '2025.8 - 至今',
           company: '上海人工智能实验室',
           position: 'AI算法实习生',
           icon: '/homepage/img/shlab.png',
           details: [
-            '参与Wanjuan大规模化学反应数据集化学文档信息提取agent设计。',
-            '参与化学基座大模型训练流程设计和训练。',
-            '参与产物预测大模型强化学习算法设计。',
-            '参与产率预测大模型强化学习算法设计。'
+            'Wanjuan大规模化学反应数据集化学文档信息提取agent设计。',
+            '化学基座大模型训练流程设计和训练。',
+            '产物预测大模型强化学习算法设计。',
+            '产率预测大模型强化学习算法设计。'
           ]
         },
         {
@@ -286,7 +286,7 @@ export const translations: Record<Language, Translations> = {
           ]
         },
         {
-          period: '2025.6 - 2025.9',
+          period: '2025.6 - 2025.8',
           company: '默升科技',
           position: 'AI 本地化部署工程师（实习）',
           icon: '/homepage/img/credo.png',
@@ -465,15 +465,15 @@ export const translations: Record<Language, Translations> = {
       title: 'Internship Experience',
       experiences: [
         {
-          period: '2025.10 - Present',
+          period: '2025.8 - Present',
           company: 'Shanghai AI Laboratory',
           position: 'AI Algorithm Intern',
           icon: '/homepage/img/shlab.png',
           details: [
-            'Participated in the design of chemical document information extraction agent for Wanjuan large-scale chemical reaction dataset.',
-            'Participated in the design and training of chemical foundation model training pipeline.',
-            'Participated in the design of reinforcement learning algorithms for product prediction model.',
-            'Participated in the design of reinforcement learning algorithms for yield prediction model.'
+            'Design of chemical document information extraction agent for Wanjuan large-scale chemical reaction dataset.',
+            'Design and training of chemical foundation model training pipeline.',
+            'Design of reinforcement learning algorithms for product prediction model.',
+            'Design of reinforcement learning algorithms for yield prediction model.'
           ]
         },
         {
@@ -512,7 +512,7 @@ export const translations: Record<Language, Translations> = {
           ]
         },
         {
-          period: '2025.6 - 2025.9',
+          period: '2025.6 - 2025.8',
           company: 'Credo Technology',
           position: 'AI Localization Engineer Intern',
           icon: '/homepage/img/credo.png',
