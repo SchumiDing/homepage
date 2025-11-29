@@ -371,7 +371,7 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: 'About Me',
       description: 'Learn about my background, experience, and passion for technology.',
-      avatar: '/homepage/img/credo.png',
+      avatar: '/homepage/img/shlab.png',
       name: 'Ruiyi Ding',
       role: 'Algorithm + Full Stack Developer',
       affiliation: 'Shanghai AI Laboratory',
