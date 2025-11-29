@@ -165,7 +165,7 @@ body {
   --accent: #ffffff;
   --neon-purple: #0ea5e9;
   --neon-pink: #14b8a6;
-  --text-color: #0f172a;
+  --text-color: #f1f5f9;
 }
 :root[data-theme='light-cool-white'] {
   /* Light cool theme: white background, dark text */
