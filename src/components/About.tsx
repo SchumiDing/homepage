@@ -46,6 +46,7 @@ export const About: React.FC = () => {
                 />
                 <h3 className="text-xl font-semibold text-white mb-2">{t.about.name}</h3>
                 <p className="text-purple-400">{t.about.role}</p>
+                <p className="text-gray-400 text-sm mt-2">{t.about.affiliation}</p>
                 {/* Stats 使用 translation */}
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <div className="text-center">

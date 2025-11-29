@@ -34,6 +34,7 @@ export interface Translations {
     avatar: string;
     name: string;
     role: string;
+    affiliation: string;
     stats: {
       years: string;
       yearsLabel: string;
@@ -147,6 +148,7 @@ export const translations: Record<Language, Translations> = {
       avatar: '/homepage/img/credo.png',
       name: '丁睿毅',
       role: '算法+全栈开发',
+      affiliation: '上海人工智能实验室',
       stats: {
         years: '7+',
         yearsLabel: '年经验',
@@ -236,6 +238,18 @@ export const translations: Record<Language, Translations> = {
     internships: {
       title: '实习经历',
       experiences: [
+        {
+          period: '2025.10 - 至今',
+          company: '上海人工智能实验室',
+          position: 'AI算法实习生',
+          icon: '/homepage/img/shlab.png',
+          details: [
+            '参与Wanjuan大规模化学反应数据集化学文档信息提取agent设计。',
+            '参与化学基座大模型训练流程设计和训练。',
+            '参与产物预测大模型强化学习算法设计。',
+            '参与产率预测大模型强化学习算法设计。'
+          ]
+        },
         {
           period: '2023.7 - 2024.1',
           company: '中国科学院软件科学研究所',
@@ -360,6 +374,7 @@ export const translations: Record<Language, Translations> = {
       avatar: '/homepage/img/credo.png',
       name: 'Ruiyi Ding',
       role: 'Algorithm + Full Stack Developer',
+      affiliation: 'Shanghai AI Laboratory',
       stats: {
         years: '7+',
         yearsLabel: 'Years Experience',
@@ -449,6 +464,18 @@ export const translations: Record<Language, Translations> = {
     internships: {
       title: 'Internship Experience',
       experiences: [
+        {
+          period: '2025.10 - Present',
+          company: 'Shanghai AI Laboratory',
+          position: 'AI Algorithm Intern',
+          icon: '/homepage/img/shlab.png',
+          details: [
+            'Participated in the design of chemical document information extraction agent for Wanjuan large-scale chemical reaction dataset.',
+            'Participated in the design and training of chemical foundation model training pipeline.',
+            'Participated in the design of reinforcement learning algorithms for product prediction model.',
+            'Participated in the design of reinforcement learning algorithms for yield prediction model.'
+          ]
+        },
         {
           period: '2023.7 - 2024.1',
           company: 'Institute of Software, Chinese Academy of Sciences',
